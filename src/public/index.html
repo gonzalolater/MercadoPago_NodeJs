@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store</title>
+</head>
+<body>
+    
+        <button>
+            Pay
+        </button>
+
+        <script>
+            const checkout = document.getElementById('checkout')
+            checkout.addEventListener('click', async () => {
+                const response = await fetch('create-order', {
+                    method: 'POST'
+                })
+                const data = await response.json()
+                console.log(data)
+                windows.location.href = data.init_point
+            })
+        
+        </script>
+
+</body>
+</html>
